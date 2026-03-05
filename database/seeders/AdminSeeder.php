@@ -19,10 +19,10 @@ class AdminSeeder extends Seeder
 
         // Créer l'admin (ou le récupérer s'il existe déjà)
         $admin = User::firstOrCreate(
-            ['email' => 'glodi@gmail.com'], // <-- mets TON email admin
+            ['email' => 'glodi@gmail.com'], // <-- email admin
             [
                 'name' => 'Admin',
-                'password' => Hash::make('MonMotDePasse123'), // <-- mets TON mot de passe
+                'password' => Hash::make('glodi@12345'), // <-- mot de passe
                 'email_verified_at' => now(),
             ]
         );
