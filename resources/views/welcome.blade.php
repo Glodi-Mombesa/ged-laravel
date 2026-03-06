@@ -48,13 +48,18 @@
 <!-- ================= NAVBAR ================= -->
 <nav id="navbar" class="fixed w-full z-50 transition duration-300">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-2 sm:gap-3">
-        <a href="{{ route('welcome') }}" class="flex items-center gap-3 group min-w-0">
-            <span class="h-9 w-9 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-indigo-600/20 border border-indigo-400/20 grid place-items-center shadow-lg shadow-indigo-600/10 shrink-0">
-                <i class="fa-solid fa-folder-open text-indigo-300 text-lg sm:text-xl group-hover:scale-110 transition"></i>
+        <a href="{{ route('welcome') }}" class="brand-wrap flex items-center gap-2 sm:gap-3 group min-w-0 flex-1">
+            <span class="brand-icon h-9 w-9 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-indigo-600/20 border border-indigo-400/20 grid place-items-center shadow-lg shadow-indigo-600/10 shrink-0">
+                <i class="fa-solid fa-folder-open text-indigo-300 text-base sm:text-xl group-hover:scale-110 transition"></i>
             </span>
-            <div class="leading-tight min-w-0">
-                <div class="font-extrabold tracking-tight text-white truncate">GED Administration</div>
-                <div class="text-xs text-slate-400 truncate">Gestion électronique des documents</div>
+
+            <div class="leading-tight min-w-0 overflow-hidden">
+                <div class="brand-title font-extrabold tracking-tight text-white truncate">
+                    GED Administration
+                </div>
+                <div class="brand-subtitle text-xs text-slate-400 truncate">
+                    Gestion électronique des documents
+                </div>
             </div>
         </a>
 
@@ -481,6 +486,48 @@
     }
 
     @media (max-width: 389px){
+        #navbar .mobile-login-btn{
+            width: 2.35rem;
+            height: 2.35rem;
+            padding: 0;
+            border-radius: .8rem;
+        }
+
+        #navbar .mobile-login-btn i{
+            font-size: .8rem;
+        }
+    }
+    @media (max-width: 420px){
+    #navbar .brand-title{
+        font-size: .95rem;
+        line-height: 1.1;
+    }
+
+    #navbar .brand-subtitle{
+        display: none;
+    }
+
+    #navbar .brand-icon{
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+}
+
+    @media (max-width: 389px){
+        #navbar .brand-wrap{
+            gap: .55rem;
+        }
+
+        #navbar .brand-title{
+            font-size: .88rem;
+        }
+
+        #navbar .brand-icon{
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: .8rem;
+        }
+
         #navbar .mobile-login-btn{
             width: 2.35rem;
             height: 2.35rem;
