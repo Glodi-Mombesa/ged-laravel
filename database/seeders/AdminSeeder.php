@@ -3,31 +3,31 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 use Spatie\Permission\Models\Role;
 
 class AdminSeeder extends Seeder
 {
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
-        // Rôle admin (web)
         $adminRole = Role::firstOrCreate([
             'name' => 'admin',
             'guard_name' => 'web',
         ]);
 
-        // Créer l'admin (ou le récupérer s'il existe déjà)
         $admin = User::firstOrCreate(
-            ['email' => 'glodi@gmail.com'], // <-- email admin
+            ['email' => 'admin@ged.com'],
             [
                 'name' => 'Admin',
-                'password' => Hash::make('glodi@12345'), // <-- mot de passe
+                'password' => Hash::make('Admin@12345'),
                 'email_verified_at' => now(),
             ]
         );
 
-        // Assigner rôle
         if (! $admin->hasRole('admin')) {
             $admin->assignRole($adminRole);
         }
