@@ -87,9 +87,11 @@
                 </form>
             @else
                 <a href="{{ route('login') }}"
-                   class="mobile-login-btn inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20 text-xs sm:text-sm md:text-base">
-                    <i class="fa-solid fa-right-to-bracket text-[11px] sm:text-sm"></i>
-                    <span class="font-semibold">Connexion</span>
+                    class="mobile-login-btn inline-flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20 text-xs sm:text-sm md:text-base"
+                    aria-label="Connexion"
+                    title="Connexion">
+                        <i class="fa-solid fa-right-to-bracket text-[12px] sm:text-sm"></i>
+                        <span class="hidden min-[390px]:inline font-semibold">Connexion</span>
                 </a>
             @endauth
         </div>
@@ -478,15 +480,16 @@
         .icon-bubble{ height: 2.6rem; width: 2.6rem; border-radius: 1.1rem; }
     }
 
-    @media (max-width: 380px){
+    @media (max-width: 389px){
         #navbar .mobile-login-btn{
-            padding: .45rem .65rem;
-            font-size: .72rem;
-            border-radius: .7rem;
+            width: 2.35rem;
+            height: 2.35rem;
+            padding: 0;
+            border-radius: .8rem;
         }
 
         #navbar .mobile-login-btn i{
-            font-size: .72rem;
+            font-size: .8rem;
         }
     }
 </style>
