@@ -5,7 +5,24 @@
     <title>GED Administration</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="description" content="Plateforme GED moderne pour centraliser, organiser et sécuriser les documents de l’entreprise.">
+    <meta name="theme-color" content="#0f172a">
+
+    <meta property="og:title" content="GED Administration">
+    <meta property="og:description" content="Plateforme GED moderne pour centraliser, organiser et sécuriser les documents de l’entreprise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('images/og-cover.jpg') }}">
+    <meta property="og:locale" content="fr_FR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GED Administration">
+    <meta name="twitter:description" content="Plateforme GED moderne pour centraliser, organiser et sécuriser les documents de l’entreprise.">
+    <meta name="twitter:image" content="{{ asset('images/og-cover.jpg') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -30,10 +47,10 @@
 
 <!-- ================= NAVBAR ================= -->
 <nav id="navbar" class="fixed w-full z-50 transition duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center gap-3">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-2 sm:gap-3">
         <a href="{{ route('welcome') }}" class="flex items-center gap-3 group min-w-0">
-            <span class="h-10 w-10 rounded-2xl bg-indigo-600/20 border border-indigo-400/20 grid place-items-center shadow-lg shadow-indigo-600/10 shrink-0">
-                <i class="fa-solid fa-folder-open text-indigo-300 text-xl group-hover:scale-110 transition"></i>
+            <span class="h-9 w-9 sm:h-10 sm:w-10 rounded-xl sm:rounded-2xl bg-indigo-600/20 border border-indigo-400/20 grid place-items-center shadow-lg shadow-indigo-600/10 shrink-0">
+                <i class="fa-solid fa-folder-open text-indigo-300 text-lg sm:text-xl group-hover:scale-110 transition"></i>
             </span>
             <div class="leading-tight min-w-0">
                 <div class="font-extrabold tracking-tight text-white truncate">GED Administration</div>
@@ -70,8 +87,8 @@
                 </form>
             @else
                 <a href="{{ route('login') }}"
-                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20">
-                    <i class="fa-solid fa-right-to-bracket"></i>
+                   class="mobile-login-btn inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl bg-indigo-600 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/20 text-xs sm:text-sm md:text-base">
+                    <i class="fa-solid fa-right-to-bracket text-[11px] sm:text-sm"></i>
                     <span class="font-semibold">Connexion</span>
                 </a>
             @endauth
@@ -136,7 +153,6 @@
                 </a>
             </div>
 
-            <!-- ✅ responsive: 1 col (xs) -> 2 cols (sm) -> 3 cols (lg) -->
             <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-xl">
                 <div class="stat-card reveal">
                     <div class="text-xs text-slate-400">Workflow</div>
@@ -153,7 +169,6 @@
             </div>
         </div>
 
-        {{-- Mockup --}}
         <div class="reveal">
             <div class="relative rounded-3xl border border-white/10 bg-white/5 p-4 sm:p-5 shadow-2xl shadow-indigo-600/10 overflow-hidden">
                 <div class="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-indigo-500/20 blur-3xl"></div>
@@ -221,7 +236,6 @@
     </div>
 </header>
 
-<!-- ================= FEATURES ================= -->
 <section id="features" class="py-20 sm:py-24 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center reveal">
@@ -265,7 +279,6 @@
     </div>
 </section>
 
-<!-- ================= HOW IT WORKS ================= -->
 <section class="py-20 sm:py-24 bg-slate-900/40 border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
 
@@ -317,7 +330,6 @@
     </div>
 </section>
 
-<!-- ================= CTA ================= -->
 <section class="py-16 sm:py-20 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-600/20 via-white/5 to-fuchsia-500/10 p-6 sm:p-10 overflow-hidden relative reveal">
@@ -362,12 +374,10 @@
     </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="py-10 bg-slate-950 text-center text-slate-500 text-sm border-t border-white/5">
     © {{ date('Y') }} GED Administration — Projet académique
 </footer>
 
-<!-- ================= STYLES ================= -->
 <style>
     .glow { text-shadow: 0 0 24px rgba(129,140,248,.25); }
 
@@ -411,7 +421,7 @@
         border: 1px solid rgba(255,255,255,.08);
         background: rgba(255,255,255,.03);
         transition:.25s;
-        flex-wrap: wrap; /* ✅ important pour mobile */
+        flex-wrap: wrap;
     }
     .mock-row:hover{ transform: translateX(4px); background: rgba(255,255,255,.05); border-color: rgba(129,140,248,.25); }
 
@@ -422,7 +432,7 @@
         font-weight:700;
         border:1px solid rgba(255,255,255,.10);
         white-space:nowrap;
-        margin-left:auto; /* ✅ pousse le badge à droite */
+        margin-left:auto;
         flex: 0 0 auto;
     }
     .badge-ok{ background: rgba(16,185,129,.12); color:#a7f3d0; border-color: rgba(16,185,129,.25); }
@@ -460,7 +470,6 @@
     .floating2{ animation: floaty2 8s ease-in-out infinite; }
     .floating3{ animation: floaty3 7s ease-in-out infinite; }
 
-    /* ✅ Responsive fix (mets ça ici, en bas du <style>) */
     @media (max-width: 420px){
         .feature-card{ padding: 1.25rem; border-radius: 1.25rem; }
         .stat-card{ padding: .75rem .85rem; }
@@ -468,11 +477,21 @@
         .badge{ font-size: .70rem; padding: .22rem .5rem; }
         .icon-bubble{ height: 2.6rem; width: 2.6rem; border-radius: 1.1rem; }
     }
+
+    @media (max-width: 380px){
+        #navbar .mobile-login-btn{
+            padding: .45rem .65rem;
+            font-size: .72rem;
+            border-radius: .7rem;
+        }
+
+        #navbar .mobile-login-btn i{
+            font-size: .72rem;
+        }
+    }
 </style>
 
-<!-- ================= JS ================= -->
 <script>
-    // Navbar effect
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
         if (window.scrollY > 50) {
@@ -482,7 +501,6 @@
         }
     });
 
-    // Reveal (IntersectionObserver = plus propre que scroll)
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
@@ -491,7 +509,6 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => io.observe(el));
 
-    // Parallax léger
     window.addEventListener("scroll", function () {
         const bg = document.getElementById("parallax-bg");
         if (!bg) return;
