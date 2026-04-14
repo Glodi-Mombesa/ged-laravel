@@ -194,7 +194,9 @@
 
                 @empty
                     <div class="p-10 text-center text-slate-600 border border-slate-200 rounded-3xl bg-slate-50">
-                        <div class="text-4xl mb-2">📄</div>
+                        <div class="text-4xl mb-2 text-blue-500">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
                         <div class="font-extrabold text-slate-900 text-lg">Aucun document</div>
                         <div class="text-sm mt-1">Aucun document validé ne correspond à tes filtres.</div>
                     </div>

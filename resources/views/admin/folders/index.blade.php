@@ -152,7 +152,9 @@
                 </div>
             @empty
                 <div class="col-span-full bg-white rounded-3xl border border-slate-200 p-12 text-center text-slate-600">
-                    <div class="text-4xl mb-3">📁</div>
+                    <div class="text-4xl mb-3 text-yellow-500">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
                     <div class="font-extrabold text-slate-900 text-lg">Aucun dossier</div>
                     <div class="text-sm mt-1">Crée ton premier dossier GED.</div>
                 </div>
