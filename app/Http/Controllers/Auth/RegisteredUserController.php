@@ -18,7 +18,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        // ✅ Seul un admin connecté peut ouvrir /register
+        //  Seul un admin connecté peut ouvrir /register
         if (!auth()->check() || !auth()->user()->hasRole('admin')) {
             abort(403, 'Accès refusé.');
         }
@@ -33,7 +33,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // ✅ Seul un admin connecté peut créer un compte
+        //  Seul un admin connecté peut créer un compte
         if (!auth()->check() || !auth()->user()->hasRole('admin')) {
             abort(403, 'Accès refusé.');
         }
@@ -53,7 +53,7 @@ class RegisteredUserController extends Controller
         // (Optionnel mais utile) : déclenche l’événement d’inscription
         event(new Registered($user));
 
-        // ✅ IMPORTANT : On NE connecte PAS le nouvel utilisateur
+        //  IMPORTANT : On NE connecte PAS le nouvel utilisateur
         // Auth::login($user);
 
         return redirect()->route('dashboard');

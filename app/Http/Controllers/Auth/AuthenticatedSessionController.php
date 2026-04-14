@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $user = $request->user();
 
-        // 🔐 Sécurité : si pour une raison quelconque pas d'utilisateur
+        // Sécurité : si pour une raison quelconque pas d'utilisateur
         if (!$user) {
             return redirect()->route('login');
         }
@@ -43,17 +43,17 @@ class AuthenticatedSessionController extends Controller
         |--------------------------------------------------------------------------
         */
 
-        // ✅ Admin → /admin
+        // Admin → /admin
         if ($user->hasRole('admin')) {
             return redirect()->route('admin.dashboard');
         }
 
-        // ✅ User → /user
+        // User → /user
         if ($user->hasRole('user')) {
             return redirect()->route('user.home');
         }
 
-        // ⚠️ Si aucun rôle valide → on déconnecte
+        // Si aucun rôle valide → on déconnecte
         Auth::logout();
 
         return redirect()
