@@ -160,7 +160,9 @@
                     @empty
                         <tr>
                             <td colspan="5" class="px-6 py-14 text-center text-slate-600">
-                                <div class="text-4xl mb-3">✅</div>
+                                <div class="text-4xl mb-3 text-green-500">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                                 <div class="font-extrabold text-slate-900 text-lg">Aucun document à valider</div>
                                 <div class="text-sm mt-1">Tous les documents ont été traités.</div>
                             </td>
